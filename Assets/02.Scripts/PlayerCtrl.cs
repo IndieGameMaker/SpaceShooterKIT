@@ -6,6 +6,10 @@ public class PlayerCtrl : MonoBehaviour
 {
     private float h;
     private float v;
+    private float r;
+
+    public float moveSpeed = 8.0f;
+    public float turnSpeed = 500.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +22,14 @@ public class PlayerCtrl : MonoBehaviour
     {
         v = Input.GetAxis("Vertical"); // up, down [w, s]   -1.0f ~ 0.0f ~ +1.0f
         h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
+        r = Input.GetAxis("Mouse X");
+
         Debug.Log($"h={h} v={v}");
 
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
-        transform.Translate(moveDir.normalized * Time.deltaTime * 8.0f);
+        transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
+        transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
     }
 
     /*
