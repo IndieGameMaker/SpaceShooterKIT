@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    private float h;
+    private float v;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +16,9 @@ public class PlayerCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        v = Input.GetAxis("Vertical"); // up, down [w, s]   -1.0f ~ 0.0f ~ +1.0f
+        Debug.Log("v=" + v);
+
         //transform.position += new Vector3(0, 0, 0.01f);
         transform.Translate(Vector3.forward * 0.01f);
     }
