@@ -8,13 +8,16 @@ public class PlayerCtrl : MonoBehaviour
     private float v;
     private float r;
 
-    public float moveSpeed = 8.0f;
+    public float moveSpeed = 10.0f;
     public float turnSpeed = 500.0f;
+
+    [SerializeField]
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = GetComponent<Animator>(); // Generic
     }
 
     // Update is called once per frame
