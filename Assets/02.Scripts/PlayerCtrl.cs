@@ -18,6 +18,7 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>(); // Generic
+        // animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,6 +34,15 @@ public class PlayerCtrl : MonoBehaviour
 
         transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
         transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
+
+        if (Mathf.Abs(v) >= 0.01f)
+        {
+            animator.SetBool("Forward", true);
+        }
+        else
+        {
+            animator.SetBool("Forward", false);
+        }
     }
 
     /*
