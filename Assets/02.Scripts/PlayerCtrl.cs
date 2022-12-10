@@ -21,6 +21,7 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log($"h={h} v={v}");
 
         transform.Translate(Vector3.forward * v * 0.01f);
+        transform.Translate(Vector3.right * h * 0.01f);
     }
 
     /*
