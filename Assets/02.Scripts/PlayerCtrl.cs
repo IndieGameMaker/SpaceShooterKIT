@@ -20,8 +20,8 @@ public class PlayerCtrl : MonoBehaviour
         h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
         Debug.Log($"h={h} v={v}");
 
-        transform.Translate(Vector3.forward * v * 0.01f);
-        transform.Translate(Vector3.right * h * 0.01f);
+        transform.Translate(Vector3.forward * v * Time.deltaTime * 8.0f);
+        transform.Translate(Vector3.right * h * Time.deltaTime * 8.0f);
     }
 
     /*
