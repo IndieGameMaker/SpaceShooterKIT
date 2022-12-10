@@ -22,7 +22,7 @@ public class PlayerCtrl : MonoBehaviour
 
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
-        transform.Translate(moveDir * Time.deltaTime * 8.0f);
+        transform.Translate(moveDir.normalized * Time.deltaTime * 8.0f);
     }
 
     /*
