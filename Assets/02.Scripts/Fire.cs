@@ -1,8 +1,10 @@
 #pragma warning disable CS0108
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Fire : MonoBehaviour
 {
@@ -44,12 +46,26 @@ public class Fire : MonoBehaviour
     // 코루틴 (Co-routine function)
     IEnumerator ShowMuzzleFlash()
     {
+        // Muzzle Flash Texture Offset 변경
+        /*
+            Random.Range(mix, max)
+
+            1. 정수
+            Random.Range(0, 10) --> 0, 1, 2, ... , 9
+
+            2. 실수
+            Random.Range(0.0f, 10.0f) --> 0.0f, ... , 10.0f
+        */
+
+        // (0, 0) (0.5, 0) (0, 0.5) (0.5, 0.5)
+        // 0, 0.5
+        Vector2 offset = new Vector2(Random.Range(0, 2) * 0.5f, Random.Range(0, 2) * 0.5f);
+        muzzleFlash.GetComponent<MeshRenderer>().material.mainTextureOffset = offset;
+
         muzzleFlash.enabled = true;
         // Waiting (Sleep)
         yield return new WaitForSeconds(0.2f);
 
         muzzleFlash.enabled = false;
     }
-
-
 }
