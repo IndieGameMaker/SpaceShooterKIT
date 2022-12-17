@@ -43,3 +43,14 @@ public class RemoveBullet : MonoBehaviour
     AudioSource --> n 
 
 */
+
+/*
+    하늘 표현 방식
+
+    1. 6 Sided Sky
+    2. Sky Dome
+    3. Procedural Sky
+
+    4. HDRP - Volumatric Sky
+
+*/

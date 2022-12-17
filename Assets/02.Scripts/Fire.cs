@@ -10,10 +10,13 @@ public class Fire : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private new AudioSource audio;
     [SerializeField] private AudioClip fireSfx;
+    [SerializeField] private MeshRenderer muzzleFlash;
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
+
+        muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
     }
 
     void Update()
