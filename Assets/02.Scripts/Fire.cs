@@ -17,6 +17,7 @@ public class Fire : MonoBehaviour
         audio = GetComponent<AudioSource>();
 
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
+        muzzleFlash.enabled = false;
     }
 
     void Update()
