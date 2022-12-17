@@ -62,6 +62,10 @@ public class Fire : MonoBehaviour
         Vector2 offset = new Vector2(Random.Range(0, 2) * 0.5f, Random.Range(0, 2) * 0.5f);
         muzzleFlash.GetComponent<MeshRenderer>().material.mainTextureOffset = offset;
 
+        // MuzzleFlash Scale 변경
+        float scale = Random.Range(1.0f, 3.0f);
+        muzzleFlash.transform.localScale = Vector3.one * scale;
+
         muzzleFlash.enabled = true;
         // Waiting (Sleep)
         yield return new WaitForSeconds(0.2f);
