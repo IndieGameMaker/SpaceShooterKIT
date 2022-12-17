@@ -66,6 +66,10 @@ public class Fire : MonoBehaviour
         float scale = Random.Range(1.0f, 3.0f);
         muzzleFlash.transform.localScale = Vector3.one * scale;
 
+        // MuzzleFlash 회전
+        float angle = Random.Range(0.0f, 360.0f);
+        muzzleFlash.transform.localRotation = Quaternion.Euler(0, 0, angle); // Quaternion.Euler(Vector3.forward * angle);
+
         muzzleFlash.enabled = true;
         // Waiting (Sleep)
         yield return new WaitForSeconds(0.2f);
@@ -73,3 +77,17 @@ public class Fire : MonoBehaviour
         muzzleFlash.enabled = false;
     }
 }
+
+
+/*
+    쿼터니언 (Quaternion) : 사원수  x,y,z,w (복소수 사차원 벡터)
+
+    오일러 회전(Euler Rotation) x, y, z
+
+    짐벌락(김벌락) Gimbal Lock
+
+    Quaternion.Euler(x, y, z) -> 쿼터니언타입으로 변환 (x,y,z,w)
+
+*/
+
+
