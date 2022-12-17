@@ -1,3 +1,5 @@
+#pragma warning disable CS0108
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +8,8 @@ public class Fire : MonoBehaviour
 {
     [SerializeField] private Transform firePos;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private new AudioSource audio;
+    [SerializeField] private AudioClip fireSfx;
 
     void Update()
     {

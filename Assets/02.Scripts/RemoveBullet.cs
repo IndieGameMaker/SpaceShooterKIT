@@ -36,3 +36,10 @@ public class RemoveBullet : MonoBehaviour
     }
 
 }
+
+/*
+    AudioListener --> 1 존재
+
+    AudioSource --> n 
+
+*/
