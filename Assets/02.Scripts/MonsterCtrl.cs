@@ -18,6 +18,16 @@ public class MonsterCtrl : MonoBehaviour
 
     void Update()
     {
-        agent.SetDestination(playerTr.position);
+
+        float distance = Vector3.Distance(transform.position, playerTr.position);
+        if (distance <= 10.0f)
+        {
+            agent.SetDestination(playerTr.position);
+            agent.isStopped = false;
+        }
+        else
+        {
+            agent.isStopped = true;
+        }
     }
 }
