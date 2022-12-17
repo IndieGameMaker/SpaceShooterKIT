@@ -11,6 +11,11 @@ public class Fire : MonoBehaviour
     [SerializeField] private new AudioSource audio;
     [SerializeField] private AudioClip fireSfx;
 
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
