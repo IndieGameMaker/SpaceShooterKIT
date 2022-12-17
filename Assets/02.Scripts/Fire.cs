@@ -37,6 +37,18 @@ public class Fire : MonoBehaviour
 
         // 총소리 발생
         audio.PlayOneShot(fireSfx, 0.8f);
+
+        StartCoroutine(ShowMuzzleFlash());
+    }
+
+    // 코루틴 (Co-routine function)
+    IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash.enabled = true;
+        // Waiting (Sleep)
+        yield return new WaitForSeconds(0.2f);
+
+        muzzleFlash.enabled = false;
     }
 
 
